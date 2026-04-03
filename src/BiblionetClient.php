@@ -72,9 +72,10 @@ final class BiblionetClient
     }
 
     /**
-     * Fetch paginated title summaries for a given month.
+     * Fetch paginated titles for a given month.
+     * The API returns full title records — same structure as get_title.
      *
-     * @return TitleSummary[]
+     * @return Title[]
      */
     public function getMonthTitles(
         int $year,
@@ -90,7 +91,7 @@ final class BiblionetClient
         ]);
 
         return array_map(
-            fn(array $item) => TitleSummary::fromApiResponse($item),
+            fn(array $item) => Title::fromApiResponse($item),
             $data[0]
         );
     }
