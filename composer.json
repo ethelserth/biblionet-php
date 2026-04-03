@@ -1,8 +1,22 @@
 {
     "name": "ethelserth/biblionet-php",
-    "description": "A PHP client for the Biblionet Greek books API",
+    "description": "A framework-agnostic PHP client for the Biblionet Greek books API",
     "type": "library",
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Agathoklis Tsiokos",
+            "role": "Developer"
+        }
+    ],
+    "keywords": [
+        "biblionet",
+        "books",
+        "greek",
+        "api",
+        "client",
+        "bibliographic"
+    ],
     "require": {
         "php": "^8.1",
         "psr/http-client": "^1.0",
@@ -22,5 +36,9 @@
         "psr-4": {
             "Ethelserth\\Biblionet\\Tests\\": "tests/"
         }
-    }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "minimum-stability": "stable"
 }

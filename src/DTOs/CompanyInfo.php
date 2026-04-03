@@ -23,7 +23,7 @@ final class CompanyInfo
             comId: (int) $data['ComID'],
             title: $data['Title'],
             alternativeTitle: $data['AlternativeTitle'] !== '' ? $data['AlternativeTitle'] : null,
-            address: isset($data['Address']) && $data['Address'] !== '' ? trim($data['Address']) : null,
+            address: isset($data['Address']) && $data['Address'] !== '' ? trim(str_replace("\r\n", "\n", $data['Address'])) : null,
             telephoneNumber: isset($data['TelephoneNumner']) && $data['TelephoneNumner'] !== '' ? $data['TelephoneNumner'] : null,
             email: isset($data['Email']) && $data['Email'] !== '' ? $data['Email'] : null,
             website: isset($data['Website']) && $data['Website'] !== '' ? $data['Website'] : null,
