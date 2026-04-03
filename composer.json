@@ -3,6 +3,7 @@
     "description": "A framework-agnostic PHP client for the Biblionet Greek books API",
     "type": "library",
     "license": "MIT",
+    "version": "1.0.1",
     "authors": [
         {
             "name": "Agathoklis Tsiokos",

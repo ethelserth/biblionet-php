@@ -38,8 +38,9 @@ final class BiblionetClient
     {
         $data = $this->post('get_title', ['title' => $id]);
 
-        // get_title by ID returns a flat object, not a double-nested array.
-        return Title::fromApiResponse($data);
+        // get_title returns the same double-nested [[{...}]] envelope as all
+        // other single-item endpoints (consistent with getSubject/getLanguage).
+        return Title::fromApiResponse($data[0][0]);
     }
 
     /**
@@ -50,7 +51,7 @@ final class BiblionetClient
     {
         $data = $this->post('get_title', ['isbn' => $isbn]);
 
-        return Title::fromApiResponse($data);
+        return Title::fromApiResponse($data[0][0]);
     }
 
     /**
